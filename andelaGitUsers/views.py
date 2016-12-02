@@ -28,11 +28,11 @@ class HomepageView(TemplateView):
                 org = res.json()
                 user = [users["url"]for users in org]
                 user_id = [users["events_url"]for users in org]
-                # print(user_id)
+
                 for urls in user_id:
                     base_url = urls
                 req = requests.get(base_url)
-                print(req)
+
         except requests.ConnectionError as error:
             return error
 
