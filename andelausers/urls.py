@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from andelaGitUsers.views import HomepageView
+from andelaGitUsers.views import HomepageView, CommitView
 
 urlpatterns = [
     # Examples:
@@ -9,4 +9,5 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomepageView.as_view(), name="homepage"),
+    url(r'^commits', CommitView.as_view(), name="commits"),
 ]
